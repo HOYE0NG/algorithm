@@ -57,5 +57,4 @@ while q:
         next_board, max = move(deepcopy(current_board), dx[i], dy[i])
         if max > max_value:
             max_value = max
-        print(next_board)
         q.append([next_board, count + 1])

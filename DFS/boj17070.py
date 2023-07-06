@@ -9,6 +9,8 @@ def dfs(fx, fy, rx, ry):
         return
     # 가로
     if fx == rx:
+        if rx != N-1 and ry == N-1:
+            return
         if ry+1 < N and board[rx][ry + 1] != 1:
             dfs(fx, fy+1, rx, ry+1)
         if ry+1 < N and rx+1 < N and board[rx][ry + 1] != 1 and board[rx+1][ry+1] != 1 and board[rx+1][ry] != 1:
@@ -16,6 +18,8 @@ def dfs(fx, fy, rx, ry):
     
     # 세로
     if fy == ry:
+        if rx == N-1 and ry != N-1:
+            return
         if rx+1 < N and board[rx+1][ry] != 1:
             dfs(fx+1, fy, rx+1, ry)
         if rx+1 < N and ry+1 < N and board[rx][ry + 1] != 1 and board[rx+1][ry+1] != 1 and board[rx+1][ry] != 1:
