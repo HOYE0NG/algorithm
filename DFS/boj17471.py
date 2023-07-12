@@ -17,7 +17,7 @@ def dfs_count(n):
             dfs_count(city-1)
 
 def bfs(local1):
-    print(local1, "bfs 시작")
+
     from collections import deque
     for i in range(len(visited)):
         visited[i] = False
@@ -25,7 +25,7 @@ def bfs(local1):
     q.append(local1[0])
     visited[local1[0]] = True
     while q:
-        print(q)
+
         now = q.popleft()
         for city in adj_list[now]:
             city = city-1
@@ -57,7 +57,6 @@ def dfs_(start, local1, local2, lv):
         for city in local2:
             result -= population[city]
         if abs(result) < my_result:
-            print(local1, local2)
             my_result = abs(result)
         return
     
